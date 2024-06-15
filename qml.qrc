@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>splash.qml</file>
+        <file>window.qml</file>
+        <file>image/splash.png</file>
     </qresource>
 </RCC>

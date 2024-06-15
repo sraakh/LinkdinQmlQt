@@ -1,9 +1,28 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 
-Window {
-    width: 640
-    height: 480
-    visible: true
-    title: qsTr("Hello World")
+Item {
+    Loader {
+        id: mainWindowLoader
+        active: false
+        source: "qrc:/window.qml"
+        asynchronous: true
+        onLoaded: {
+            item.visible = true;
+            splashScreenLoader.item.visible = false;
+            splashScreenLoader.source = "";
+        }
+    }
+
+    Loader {
+        id: splashScreenLoader
+        source: "qrc:/splash.qml"
+
+    }
+    Connections{
+        target: splashScreenLoader.item
+        function onMyclick() {
+            mainWindowLoader.active = true
+        }
+    }
 }
