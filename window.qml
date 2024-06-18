@@ -5,9 +5,11 @@ import QtQuick.Controls 2.14
 
 ApplicationWindow {
     id: mainWindow
-    flags: Qt.Window | Qt.WindowTitleHint | Qt.WindowSystemMenuHint | Qt.WindowCloseButtonHint
-    width: 300
-    height: 400
+    flags: Qt.FramelessWindowHint
+    width: Screen.width
+    height: Screen.height
+
+    visibility: Window.FullScreen
     visible: false
     title: "Scresh Screen Test"
 
@@ -16,11 +18,9 @@ ApplicationWindow {
         while(timeout > new Date().valueOf()) {}
     }
 
-    Text {
-        text: "Window ready!"
-        anchors.centerIn: parent
-        font.bold: true
-        font.pixelSize: 20
-        color: "black"
+    Loader {
+        id: login
+        source: "qrc:/login.qml"
+        anchors.fill: parent
     }
 }

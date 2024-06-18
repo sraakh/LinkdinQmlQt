@@ -4,5 +4,9 @@
         <file>splash.qml</file>
         <file>window.qml</file>
         <file>image/splash.png</file>
+        <file>login.qml</file>
+        <file>image/shutdown.png</file>
+        <file>login/Login.qml</file>
+        <file>login/Sing.qml</file>
     </qresource>
 </RCC>
