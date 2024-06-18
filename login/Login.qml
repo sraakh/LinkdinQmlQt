@@ -1,11 +1,15 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Controls.Styles 1.4
-
+import login 1.0
 Item{
     id: item1
     width: 300
     height: 400
+
+    Login{
+        id:login
+    }
 
     Button {
         id: button
@@ -14,6 +18,12 @@ Item{
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter
+        onClicked :{
+            login.userName = user.text
+            login.password = pass.text
+            login.clickLogin();
+        }
+
         contentItem:Text {
             id: name
             text: button.text
